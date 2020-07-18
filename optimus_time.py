@@ -16,16 +16,12 @@ def valid_login(username,password):
 def log_the_user_in(username):
     return render_template('hello.html',name=username)
 
-@app.route('/')
+@app.route('/optimus-time')
 def index():
-    return 'index'
+    return render_template('optimus_time.html')
 
-@app.route('/session-info', methods=['POST', 'GET'])
+@app.route('/work-info', methods=['POST', 'GET'])
 def login():
-    name=None
-    dur=None
-    due=None
-
     session["test"] = [1,2]
 
     if request.method == 'POST':
@@ -33,8 +29,6 @@ def login():
         dur = request.form['duration_hr']
         due = request.form['due_in_x']
         session[f"{name}"] = [dur,due]
-    if 'all_works' in session:
-        session.pop('all_works',None)
 
 
     return jsonify([session[n] for n in session])
