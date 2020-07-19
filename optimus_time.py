@@ -35,7 +35,9 @@ def calendar():
     if request.method == 'POST':
         if request.form['clear'] == "1":
             session.clear()
-    return render_template('calendar.html')
+    un_proc_tasks = [Work(x[0],x[1],x[2]) for x in session]
+    sched = schedule(un_proc_tasks)
+    return render_template('calendar.html',sched=sched)
 
 with app.test_request_context():
     print(url_for('index'))
