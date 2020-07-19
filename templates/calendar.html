@@ -2,7 +2,7 @@
 <html>
     <head>
         <title>Optimus Time</title>
-        <link href="/static/style.css" type="text/css" rel="stylesheet">
+        <link href="static/style.css" type="text/css" rel="stylesheet">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
@@ -43,7 +43,9 @@
         <main>
             <br>
             <div class="center">
-                <button type="button" id="clear">Clear Calendar</button>
+                <form action = "/calendar" method="POST">
+                    <button type="submit" id="clear" name="clear" value="1">Clear Calendar</button>
+                </form>
             </div>
             <br><br>
             <p class="box">This is a test to see if we can make a box to go around the calender text.
