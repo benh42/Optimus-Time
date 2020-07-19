@@ -1,19 +1,26 @@
-p {
-    font-family: Comic Sans MS;
-
+p, h2 {
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    color: white;
+    padding-left: 5%;
+    padding-right: 5%;
 }
 
 h1 {
-    font-family: Comic Sans MS;
+    font-family: "Arial Black";
     color: teal;
 }
 
+
 header {
     text-align: center;
+    padding-top: 20px;
 }
 
 body {
-    padding: 20px;
+    background: linear-gradient(-45deg, #35577D, #141E30);
+    margin: 0;
+    padding: 0;
+    height: 1000px;
 }
 
 #line {
@@ -38,6 +45,12 @@ body {
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 }
   
+.modal-content p {
+    padding: 2%;
+    color: black;
+    text-align: center;
+}
+
 /* Modal Content */
 .modal-content {
     background-color: #fefefe;
@@ -103,4 +116,7 @@ nav ul li a:hover {
     border: 7px solid teal;
     background-color: rgb(60,60,66);
     padding: 15px;
+    width: 75%;
+    margin: 0 auto;
+
 }
