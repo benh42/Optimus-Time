@@ -1,12 +1,15 @@
 p {
     font-family: Comic Sans MS;
-    color: red;
 
 }
 
 h1 {
     font-family: Comic Sans MS;
     color: teal;
+}
+
+header {
+    text-align: center;
 }
 
 body {
@@ -85,4 +88,9 @@ nav ul li a:hover {
     color: #555!important;
     font-weight: 600;
     font-size: 16px;
+}
+
+.box {
+    border: 2px solid cornflowerblue;
+    background-color: gainsboro;
 }
