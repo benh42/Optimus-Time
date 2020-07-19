@@ -56,6 +56,60 @@
             </div>
             {% endfor %}
 
+            <!-- The Modal -->
+            <div id="myModal" class="modal">
+
+                <!-- Modal content -->
+                <div class="modal-content" style="width: 50%;">
+                    <span class="close">&times;</span>
+                    <p>Give us a little more information about your assignment and we'll add it to your calendar for you!</p>
+                    <form action="/optimus-time" method="POST">
+                        <label for="name">What is your assignment?</label>
+                        <input type="text" id="name" name="name">
+                        <br>
+
+                        <label for="due_in_x">How many days until it's due?</label>
+                        <input type="number" id="due_in_x" name="due_in_x" min="0">
+
+                        <br>
+                        <label for="duration_hr">How long will it take you to complete it?</label>
+                        <input type="number" id="duration_hr" name="duration_hr" min="0">
+                        <small>hours</small>
+
+                        <br>
+                        <input type="submit" value="Add Event">
+                    </form>
+                </div>
+            </div>
+
+            <script>
+            // Get the modal
+            var modal = document.getElementById("myModal");
+
+            // Get the button that opens the modal
+            var btn = document.getElementById("myBtn");
+
+            // Get the <span> element that closes the modal
+            var span = document.getElementsByClassName("close")[0];
+
+            // When the user clicks the button, open the modal 
+            btn.onclick = function() {
+            modal.style.display = "block";
+            }
+
+            // When the user clicks on <span> (x), close the modal
+            span.onclick = function() {
+            modal.style.display = "none";
+            }
+
+            // When the user clicks anywhere outside of the modal, close it
+            window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+            }
+            </script>
+
         </main>
 
     </body>
