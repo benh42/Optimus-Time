@@ -22,7 +22,7 @@ def index():
 
 @app.route('/optimus-time', methods=['POST', 'GET'])
 def login():
-    session["test"] = [1,2]
+    session['test'] = [1,2]
 
     if request.method == 'POST':
         name = request.form['name']
@@ -30,6 +30,7 @@ def login():
         due = request.form['due_in_x']
         session[f"{name}"] = [dur,due]
 
+    session.pop('test')
 
     return render_template('optimus_time.html')
 
