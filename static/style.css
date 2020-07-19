@@ -16,6 +16,10 @@ body {
     padding: 20px;
 }
 
+#line {
+    border: 1px solid white;
+}
+
 .center {
     text-align: center;
 }
@@ -95,6 +99,8 @@ nav ul li a:hover {
 }
 
 .box {
-    border: 2px solid cornflowerblue;
-    background-color: gainsboro;
+    color: white;
+    border: 7px solid teal;
+    background-color: rgb(60,60,66);
+    padding: 15px;
 }
