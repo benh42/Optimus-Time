@@ -11,6 +11,31 @@ class Work():
     def __repr__(self):
         return f"{self.name} : {self.dur} : {self.due}"
 
+def split(input_w):
+    #return [Work(w_in.name, w_in.dur/w_in.due, w_in.due), Work(w_in.name, w_in.dur/w_in.due, w_in.due)]
+    L = []
+    for n in range(0,input_w.due):
+        #for p in range(0,l):
+        L.append(Work(input_w.name,round(input_w.dur/input_w.due,1),input_w.due-n))
+            #if input_work[p].due-n <= 0:
+                
+    return L
+
+def schedule(input_w_l):
+    S = []
+    for W in input_w_l:
+        S.append(split(W))
+    final = []
+    max_due = input_w_l[-1].due
+    for d in range(max_due):
+        A = []
+        for subject in S:
+            try:
+                A.append(subject[d])
+            except:
+                True
+        final.append(A)
+    return final
 
 @app.route('/work-info')
 def index():
@@ -35,9 +60,12 @@ def calendar():
     if request.method == 'POST':
         if request.form['clear'] == "1":
             session.clear()
-    un_proc_tasks = [Work(x[0],x[1],x[2]) for x in session]
-    sched = schedule(un_proc_tasks)
-    return render_template('calendar.html',sched=sched)
+    un_proc_tasks = [Work(session[n][0],int(session[n][1]),int(session[n][2])) for n in session]
+    if len(un_proc_tasks) > 0:
+        un_proc_tasks.sort(key=lambda x: x.due, reverse=False)
+        sched = schedule(un_proc_tasks)
+        return render_template('calendar.html',sched=sched)
+    return render_template('calendar.html')
 
 with app.test_request_context():
     print(url_for('index'))

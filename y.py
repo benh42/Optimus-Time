@@ -24,7 +24,7 @@ def schedule(input_w_l):
     for W in input_w_l:
         S.append(split(W))
     final = []
-    max_due = input_work[-1].due
+    max_due = input_w_l[-1].due
     for d in range(max_due):
         A = []
         for subject in S:

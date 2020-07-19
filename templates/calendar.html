@@ -48,7 +48,7 @@
             {% for day in sched %}
             <div class="box">
                 <br>
-                <h2 class="center">Day: {{sched.index(day)}}</h2>
+                <h2 class="center">Day: {{sched.index(day)+1}}</h2>
                 <hr id="line">
                 {% for task in day %}
                 <p>Do {{task.name}} for {{task.dur}} hour(s)</p>
